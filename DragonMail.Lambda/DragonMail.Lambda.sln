@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26621.2
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DragonMail.Lambda", "DragonMail.Lambda\DragonMail.Lambda.csproj", "{0E5A4FDC-726B-4849-9748-A12FD5C9BA27}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DragonMail.Lambda.Tests", "DragonMail.Lambda.Tests\DragonMail.Lambda.Tests.csproj", "{C94844F4-192B-4EB8-9318-242C3DA4E9EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E5A4FDC-726B-4849-9748-A12FD5C9BA27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E5A4FDC-726B-4849-9748-A12FD5C9BA27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E5A4FDC-726B-4849-9748-A12FD5C9BA27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E5A4FDC-726B-4849-9748-A12FD5C9BA27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C94844F4-192B-4EB8-9318-242C3DA4E9EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C94844F4-192B-4EB8-9318-242C3DA4E9EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C94844F4-192B-4EB8-9318-242C3DA4E9EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C94844F4-192B-4EB8-9318-242C3DA4E9EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {70EE384A-8E52-4C2B-AE51-CD40DA342B08}
+	EndGlobalSection
+EndGlobal
