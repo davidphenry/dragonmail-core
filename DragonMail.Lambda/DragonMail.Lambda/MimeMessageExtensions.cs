@@ -51,11 +51,13 @@ namespace DragonMail.Lambda
                 mail.ToEmail = toMailBox.Address;
 
                 mail.SetMimeInfo(mimeMessage);
-                
+
                 mail.Queue = DSMail.MessageQueue(mail.ToEmail);
                 mail.SentDate = DateTime.Now;
                 mail.MessageId = messageId;
-                mail.Attachments = parsedMail.Attachments.ToDictionary(a => a.Name, a => a.File.Length);
+
+                if (parsedMail.Attachments != null)
+                    mail.Attachments = parsedMail.Attachments.Select(a => new DSMailAttachment() { AttachmentName = a.Name, Size = a.File.Length, ContentType = a.ContentType }).ToList();
             }
 
             return parsedMail;

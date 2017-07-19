@@ -5,6 +5,12 @@ using MimeKit;
 
 namespace DragonMail.Lambda
 {
+    public class DSMailAttachment
+    {
+        public string AttachmentName { get; set; }
+        public string ContentType { get; set; }
+        public int Size { get; set; }
+    }
     public class DSMail
     {
         public DSMail() { }
@@ -20,7 +26,7 @@ namespace DragonMail.Lambda
         public string HtmlBody { get; set; }
         public DateTime? SentDate { get; set; }
         public string Queue { get; set; }
-        public Dictionary<string, int> Attachments { get; set; }
+        public List<DSMailAttachment> Attachments { get; set; }
         public int RawMailSize { get; set; }
 
         public int MessageStatus { get; set; }

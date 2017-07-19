@@ -53,9 +53,9 @@ namespace DragonMail.Lambda
                     var request = new PutObjectRequest()
                     {
                         BucketName = bucketName,
-                        Key = $"{messageKey}/obj.json",
+                        Key = $"{ message.Queue}/mailbox/{message.MessageId}",
                         ContentBody = JsonConvert.SerializeObject(message),
-                        CannedACL = S3CannedACL.PublicRead
+                        CannedACL = S3CannedACL.PublicRead,                        
                     };
                     var response = await awsClient.PutObjectAsync(request);
 
@@ -78,7 +78,7 @@ namespace DragonMail.Lambda
                         {
                             BucketName = bucketName,
                             InputStream = new MemoryStream(attachment.File),
-                            Key = $"{messageKey}/{attachment.Name}",
+                            Key = $"{messageKey}/attachments/{attachment.Name}",
                             ContentType = attachment.ContentType,
                             CannedACL = S3CannedACL.PublicRead
                         };

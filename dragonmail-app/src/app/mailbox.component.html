@@ -1,0 +1,42 @@
+
+  <md-spinner *ngIf="isLoading"></md-spinner>
+<div *ngIf="!isLoading && mailList.length == 0" class="empty-mailbox">
+	<h2 >No mail for {{mailBox}}</h2>
+</div>	
+<md-sidenav-container *ngIf="!isLoading && mailList.length > 0" >
+	<md-sidenav #sidenav mode="side" opened="true">
+		<md-card *ngFor="let mailItem of mailList" (click)="selectMailItem(mailItem)" class="preview-card">
+			<md-card-header>
+				<md-card-title>Subject: {{mailItem.Subject}}</md-card-title>
+				<md-card-subtitle>Date: {{selectedMail.SentDate | date: 'MM/dd/yyyy'}}</md-card-subtitle>
+				
+			</md-card-header>
+			<md-card-content>
+				{{mailItem.TextPreview}}
+			</md-card-content>
+		</md-card>
+	</md-sidenav>	
+	
+	<md-card class="mail-card"  md-colors="::{backgroundColor: 'default-primary-700'}">
+		<md-card-header>
+			<md-card-title  >Subject: {{selectedMail.Subject}}</md-card-title>		
+			<md-card-subtitle>
+			From: {{selectedMail.FromName}} 	&lt;{{selectedMail.FromEmail}}&gt;
+			<br>
+			Date: {{selectedMail.SentDate | date: 'MM/dd/yyyy'}}
+			</md-card-subtitle>
+		</md-card-header>	
+		<md-card-content>
+		
+			<div [innerHTML]=selectedMail.HtmlBody>
+			
+			</div>
+		
+		</md-card-content>	
+		<md-card-actions>
+		<button md-button *ngFor="let attachment of selectedMail.Attachments" (click)="downloadAttachment(selectedMail, attachment)"><md-icon>attachment</md-icon>{{attachment.AttachmentName}} ({{attachment.Size}})</button>
+		</md-card-actions>
+		<md-card-footer>{{selectedMail.MessageId}}</md-card-footer>		
+	</md-card>	
+	
+</md-sidenav-container>

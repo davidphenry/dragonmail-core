@@ -1,0 +1,27 @@
+<md-toolbar  color="primary">	
+ <div class="md-toolbar-tools" >
+ 
+    <button md-button routerLink="/">
+    <md-icon>home</md-icon> 
+	Welcome to DragonMail!
+	</button>
+	
+	<span class="fill-remaining-space"></span>
+	<md-input-container>
+		<input type="search" mdInput #mailBox>		
+	</md-input-container>	
+	 <button md-button (click)="selectMailbox(mailBox.value)">
+      <md-icon>search</md-icon>
+    </button>
+</div>
+</md-toolbar>
+
+
+<md-card  *ngIf="isDefaultActive" class="default-card">
+<h2>DragonMail</h2>
+<h3>Dynamic email</h3>
+</md-card>
+
+  <router-outlet></router-outlet>
+
+
